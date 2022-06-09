@@ -100,12 +100,12 @@ querySelector retorna o primeiro elemento que combinar com o seu seletor CSS. */
 
 const animais = document.querySelector('.animais'); 
 const contato = document.querySelector('#contato'); 
-const ultimoItem = document.querySelector('.animais-lista li:lastItem');
+// const ultimoItem = document.querySelector('.animais-lista li:lastItem');
 const linkCSS = document.querySelector('[href^="https://"]'); // Seletor CSS
 const primeiroUl = document.querySelector('ul'); 
 
 // Busca dentro do Ul apenas 
-const navItem = primeiroUl.querySelector('li'); 
+// const navItem = primeiroUl.querySelector('li'); 
 
 /* Seletor Geral Lista 
 qerySelectorAll retorna todos os elementos compatíveis com o seletor CSS em uma NodeList */
@@ -126,10 +126,31 @@ const titulo2 = document.querySelector('.titulo');
 const gridSectionHTML = document.getElementsByClassName('grid-section'); // sem ponto
 const gridSectionNode = document.querySelectorAll('.grid-section');
 
-titulo2.classList.add('grid-section'); 
+// titulo2.classList.add('grid-section'); 
 
-console.log(gridSectionHTML); // 4 itens 
-console.log(gridSectionNode); // 3 itens 
+// console.log(gridSectionHTML); // 4 itens 
+// console.log(gridSectionNode); // 3 itens 
+
+/* Array-Like 
+HTMLCollection e NodeList são array-like, parecem uma array mas não são. 
+O método de Array forEach() por exemplo, existe apenas em NodeList. */ 
+
+const gridSection3 = document.querySelectorAll('.grid-section'); 
+
+/* gridSection.forEach(function(gridItem, index, array) {
+  gridItem.classList.add('azul'); 
+  console.log(index) // index do item na array
+  console.log(array) // a arra completa 
+}); */ 
+
+/* É possível transformar array-like em uma Array real, 
+usando o método Array.from(gridSection) */ 
+
+const arrayGrid = Array.from(gridSectionHTML);
+
+
+
+
 
 
 
