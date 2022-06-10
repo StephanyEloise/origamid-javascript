@@ -148,11 +148,69 @@ usando o método Array.from(gridSection) */
 
 const arrayGrid = Array.from(gridSectionHTML);
 
+/* forEach 
+Constantemente vamos selecionar uma lista de itens do dom. 
+A melhor forma para interagirmos com os mesmos é utilizando o método forEach.  */ 
 
+const imgs = document.querySelectorAll('img'); 
 
+imgs.forEach(function(imagem){
+  console.log(imagem);
+});
 
+/* Parâmetros do forEach 
+O primeiro parâmetro é o callback, ou seja, a função que será ativada a cada item.
+Essa função pode receber três parâmetros: 
+valorAtual, index e array; */ 
 
+imgs.forEach(function(valorAtual, index, array){
+  console.log(valorAtual); // o item atual no loop
+  console.log(index); // o número de index 
+  console.log(array); // a Array completa
+});
 
+/* forEach e Array 
+forEach é um método de Array, alguns objetos array-like possuem este método. 
+Caso não possua, o ideal é transformá-los em uma array */ 
 
+const titulos2 = document.getElementsByClassName('titulo'); 
+const titulosArray = Array.from(titulos); 
 
+titulosArray.forEach(function(element){
+  //console.log(element);
+});
 
+/* Arrow Function 
+Sintaxe curta em relação a function expression. 
+Basta remover a palavra chave function e adicionar a fat arrow => após os argumentos */ 
+
+const imgs1 = document.querySelectorAll('img'); 
+
+imgs1.forEach((element) => {
+  //console.log(element); 
+});
+
+// Argumentos e Parênteses 
+
+const imgs2 = document.querySelectorAll('img'); 
+
+// argumento único não precisa de parênteses 
+
+imgs2.forEach(item => {
+  //console.log(item);
+});
+
+// multiplos argumentos precisam de parênteses, mesmo vazio 
+
+imgs2.forEach((item, index) => {
+  //console.log(item, index);
+});
+
+// sem argumentos precisa dos parênteses, mesmo vazio 
+
+let i = 0; 
+imgs2.forEach(() => {
+  //console.log(i++);
+});
+
+// É melhor utilizar os parênteses. 

@@ -17,11 +17,9 @@ console.log(linkInterno);
 
 // Selecione o primeiro h2 dentro de .animais-descricao 
 
-const h2Animais = document.querySelector('.animais-descricao h2'); // Opção 1
-const animais = animais.querySelector('h2'); // Opção 2 
+const h2Animais = document.querySelector('.animais-descricao h2'); 
 
-console.log(h2Animais); // Opção 1
-console.log(animais); // Opção 2
+console.log(h2Animais); 
 
 // Selecione o último p do site 
 
@@ -29,3 +27,16 @@ const paragrafos = document.querySelectorAll('p');
 console.log(paragrafos[--paragrafos.length]); // = paragrafos.length - 1 
 
 
+const imgs = document.querySelectorAll('img'); 
+
+let i = 0; 
+imgs.forEach(function(img, index, array){
+// console.log(img, index, array);
+// console.log(i++);
+});
+
+imgs.forEach((item, index) => {
+  //console.log(i++);
+});
+
+// imgs.forEach(() => console.log(i++)); - Versão curta.
