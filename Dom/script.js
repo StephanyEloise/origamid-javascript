@@ -214,3 +214,45 @@ imgs2.forEach(() => {
 });
 
 // É melhor utilizar os parênteses. 
+
+/* Return 
+É possível omitir as chaves {} para uma função que retorna uma linha. */
+
+const imgs3 = document.querySelectorAll('img');
+
+// imgs3.forEach(item =>
+  //console.log(item) - Não é permitido fechar a linha com ; 
+//  ); 
+
+imgs3.forEach(item => console.log(item));
+
+  // Exercício 
+
+  // Mostre no console cada parágrafo do site 
+
+  const paragrafos = document.querySelectorAll('p');
+  console.log(paragrafos);
+
+  paragrafos.forEach((item) => {
+    console.log(item);
+  });
+
+  // Mostre o texto dos parágrafos no console 
+
+  paragrafos.forEach((item) => {
+    console.log(item.innerText);
+  });
+
+  // Como corrigir os erros abaixo: 
+  const imgs4 = document.querySelectorAll('img');
+
+  imgs4.forEach((item, index) => { // (item,index)
+    console.log(item, index);
+  });
+
+  let x = 0; 
+  imgs4.forEach(() => {
+    console.log(x++);
+  }); 
+
+  imgs4.forEach(() => x++); 

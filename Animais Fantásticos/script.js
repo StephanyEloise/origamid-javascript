@@ -40,3 +40,34 @@ imgs.forEach((item, index) => {
 });
 
 // imgs.forEach(() => console.log(i++)); - Versão curta.
+
+// Exercício 
+
+  // Mostre no console cada parágrafo do site 
+
+  const paragrafos1 = document.querySelectorAll('p');
+  console.log(paragrafos);
+
+  paragrafos1.forEach((item) => {
+    console.log(item);
+  });
+
+  // Mostre o texto dos parágrafos no console 
+
+  paragrafos1.forEach((item) => {
+    console.log(item.innerText);
+  });
+
+  // Como corrigir os erros abaixo: 
+  const imgs2 = document.querySelectorAll('img');
+
+  imgs2.forEach((item, index) => { // (item,index)
+    console.log(item, index);
+  });
+
+  let x = 0; 
+  imgs2.forEach(() => { // ()
+    console.log(x++);
+  }); 
+
+  imgs2.forEach(() => x++); 
