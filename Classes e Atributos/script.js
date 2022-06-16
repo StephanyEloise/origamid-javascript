@@ -12,3 +12,17 @@ menu.classList.remove('ativo');
 menu.classList.toggle('ativo'); // adiciona/remove a classe 
 menu.classList.contains('ativo'); // true ou false 
 menu.classList.replace('ativo','inativo');
+
+/* getAttribute e setAttribute 
+Métodos que retornam ou definem de acordo com o atributo selecionado */ 
+
+const img = document.querySelector('img'); 
+
+img.getAttribute('src'); // valor do src 
+img.setAttribute('alt', 'Texto Alternativo'); // muda o alt 
+img.hasAttribute('id'); // true / false 
+img.removeAttribute('alt'); // remove o alt 
+
+img.hasAttribute(); // true / false se tem algum atributo 
+
+// É muito comum métodos de get e set; 
