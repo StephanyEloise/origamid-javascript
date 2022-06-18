@@ -23,7 +23,7 @@ img.setAttribute('alt', 'Texto Alternativo'); // muda o alt
 img.hasAttribute('id'); // true / false 
 img.removeAttribute('alt'); // remove o alt 
 
-img.hasAttribute(); // true / false se tem algum atributo 
+// img.hasAttribute(); // true / false se tem algum atributo 
 
 // É muito comum métodos de get e set; 
 
@@ -36,9 +36,9 @@ if(menu.classList.contains('azul')) {
   menu.classList.add('nao-possui-azul');
 };
 
-5 = 5 + 1; 
+// 5 = 5 + 1; 
 
-menu.className += ' vermelho'; 
+// menu.className += ' vermelho'; 
 
 /* attributes 
 Retorna uma array-like com os atributos do elemento. */ 
@@ -47,3 +47,6 @@ const animais = document.querySelector('.animais');
 
 animais.attributes; // retorna todos os atributos 
 animais.attributes[0]; // retorna o primeiro atributo
+
+console.log(animais.attributes); 
+
