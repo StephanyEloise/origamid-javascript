@@ -26,3 +26,24 @@ img.removeAttribute('alt'); // remove o alt
 img.hasAttribute(); // true / false se tem algum atributo 
 
 // É muito comum métodos de get e set; 
+
+menu.classList.add('ativo', 'teste');
+menu.classList.remove('azul');
+
+if(menu.classList.contains('azul')) {
+  menu.classList.add('possui-azul');
+} else { 
+  menu.classList.add('nao-possui-azul');
+};
+
+5 = 5 + 1; 
+
+menu.className += ' vermelho'; 
+
+/* attributes 
+Retorna uma array-like com os atributos do elemento. */ 
+
+const animais = document.querySelector('.animais'); 
+
+animais.attributes; // retorna todos os atributos 
+animais.attributes[0]; // retorna o primeiro atributo
