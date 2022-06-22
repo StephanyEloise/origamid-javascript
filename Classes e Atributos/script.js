@@ -50,3 +50,52 @@ animais.attributes[0]; // retorna o primeiro atributo
 
 console.log(animais.attributes); 
 
+/* Read Only vs Writable 
+Existem propriedades que não permitem a mudança de seus valores, 
+essas são considerados Read Only, ou seja, apenas leitura. */ 
+
+animais.className; // string com o nome das classes 
+animais.className = "azul"; // substitui completamente a string
+animais.className += 'vermelho'; // adiciona vermelho à string
+
+animais.className = 'class="ativo"'; // não funciona, read-only 
+
+// Podemos modificar o valor de uma propriedade utilizando objeto.propriedade = ''
+
+const carro = {
+  portas: 4, // carro.portas - propriedade 
+  andar: function(km) {
+    console.log('Andou ${km}') // carro.andar(32) - Andou 32
+  }
+}; 
+
+// Exercício 
+
+// Adicione a classe ativo a todos os itens do menu 
+
+const itensMenu = document.querySelectorAll('.menu a');
+
+itensMenu.forEach((item) => {
+  item.classList.add('ativo');
+});
+
+// Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro 
+itensMenu.forEach((item) => {
+  item.classList.remove('ativo');
+});
+
+itensMenu[0].classList.add('ativo');
+
+// Verifique se as imagens possuem o atributo all 
+const imgs = document.querySelectorAll('img'); 
+
+imgs.forEach((img) => {
+  const possuiAtributo =img.hasAttribute('alt');
+  console.log(img, possuiAtributo);
+});
+
+// Modifique o href do link estorno no menu 
+const link = document.querySelector('a[href^=http"]');
+link.setAttribute('href', 'https://www.google.com/'); 
+
+console.log(link);
