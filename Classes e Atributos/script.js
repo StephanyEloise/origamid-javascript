@@ -91,11 +91,11 @@ const imgs = document.querySelectorAll('img');
 
 imgs.forEach((img) => {
   const possuiAtributo =img.hasAttribute('alt');
-  console.log(img, possuiAtributo);
+  // console.log(img, possuiAtributo);
 });
 
 // Modifique o href do link estorno no menu 
 const link = document.querySelector('a[href^=http"]');
 link.setAttribute('href', 'https://www.google.com/'); 
 
-console.log(link);
+// console.log(link);
