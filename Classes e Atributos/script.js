@@ -127,3 +127,19 @@ const rect = section.getBoundingClientRect();
 rect.height; // height do elemento 
 rect.width; // width do elemento 
 rect.top; // distância entre o topo do elemento e o scroll 
+
+// Window 
+
+window.innerWidth; // width da janela 
+window.outerWidth; // soma dev tools também 
+window.innerHeight; // height da janela
+window.outerHeight; // soma a barra de endereço 
+
+window.pageYOffset; // distância total do scroll horizontal 
+window.pageXOffset; // distância total do scroll vertical 
+
+if(window.innerWidth < 600) {
+  console.log('Tela menor que 600px'); 
+}; 
+
+
