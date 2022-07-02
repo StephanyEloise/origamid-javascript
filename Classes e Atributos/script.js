@@ -209,3 +209,17 @@ if(browserSmall) {
   const menu = document.querySelector('.menu'); 
   menu.classList.add('menu-mobile'); 
 };
+
+/* addEventListener 
+Adiciona uma função ao elemento, esta chamada de callback, 
+que será ativada assim que certo evento ocorrer neste elemento */ 
+
+const img3 = document.querySelector('img'); 
+
+// element.addEventListener(event, callback, options)
+img.addEventListener('click', function() {
+  console.log('Clicou');
+}); 
+
+// O terceiro parâmetro é opicional. 
+
