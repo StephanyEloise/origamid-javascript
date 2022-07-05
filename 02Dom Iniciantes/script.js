@@ -560,3 +560,45 @@ img.addEventListener('click', function() {
 }); 
 
 // O terceiro parâmetro é opicional. 
+
+/* Callback 
+É boa prática separar a função de callback do addEventListener, 
+ou seja, declarar uma função ao invés de passar diretamente uma função anônima */ 
+
+const img5 = document.querySelector('img5');
+function callback() { 
+  console.log('Clicou'); 
+};
+
+img5.addEventListener('click', callback); 
+img5.addEventListener('click', callback()); // undefined 
+img5.addEventListener('click', function() {
+  console.log('Clicou');
+});
+img5.addEventListener('click', () => {
+  console.log('Clicou');
+});
+
+/* Event 
+O primeiro parâmetro do callback é referente ao evento que ocorreu. */ 
+
+function callback(event) {
+  console.log(event);
+}; 
+
+img5.addEventListener('click', callback); 
+
+// Geralmente utilizam *e* como nome do parâmetro 
+
+/* event.preventDefault() 
+Previne o comportamento padrão do evento no browser. 
+No caso de um link externo, por exemplo, irá prevenir que o link seja ativado. */ 
+
+const linkExterno = document.querySelector('a[href^="http"]');
+
+function clickNoLink(event) {
+  event.preventDefault(); 
+  console.log(event.currentTarget.href);
+};
+
+linkExterno.addEventListener('click', clickNoLink);
