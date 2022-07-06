@@ -602,3 +602,19 @@ function clickNoLink(event) {
 };
 
 linkExterno.addEventListener('click', clickNoLink);
+
+/* this 
+A palavra chave this é uma palavra especial de JavaScript, 
+que pode fazer referência a diferentes objetos dependendo do contexto. 
+No caso de eventos, ela fará referência ao elemento em que addEventListener foi adicionado. */ 
+
+const img6 = document.querySelector('img'); 
+
+function callback(event) {
+  console.log(this); // retorna a imagem 
+  console.log(this.getAttribute('src'));
+}; 
+
+img6.addEventListener('click', callback); 
+
+// Geralmente igual ao event.currentTarget 
