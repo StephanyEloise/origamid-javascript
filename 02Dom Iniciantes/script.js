@@ -713,3 +713,91 @@ menu.innerText; // texto, sem tags
 
 menu.innerText = '<p>Texto</p>'; // a tag vai como texto 
 menu.innerHTML = '<p>Texto</p>'; // a tag é renderizada 
+
+/* Transversing 
+Como navegar pelo DOM, utilizando suas propriedades e métodos */ 
+
+const lista = document.querySelector('.animais-lista'); 
+
+lista.parentElement; // pai 
+lista.parentElement.parentElement; // pai do pai 
+lista.previousElementSibling; // elemento acima 
+lista.nextElementSibling; // elemento abaixo 
+
+lista.children; // HTMLCollection com os filhos 
+lista.children[0]; // primeiro filho 
+lista.children[--lista.children.length]; // último filho 
+
+lista.querySelectorAll('li'); // todas as LI's 
+lista.querySelector('li:last-child'); // último filho 
+
+/* Element vs Node 
+Element's representam um elemento html, ou seja, uma tag. 
+Node representa um nó, e pode ser um elemento(Element), texto, comentário, quebra de linha e mais. */ 
+
+lista.firstChild; // primeiro node child 
+lista.childNodes; // todos os nodes child 
+
+// Geralmente estamos atrás de um elemento e não de qualquer node em si. 
+
+/* Manipulando Elementos 
+É possível mover elementos no dom com métodos de Node. */ 
+
+const contato1 = document.querySelector('.contato'); 
+const titulo1 = contato.querySelector('.titulo');
+
+contato1.appendChild(lista); // move lista para o final do contato 
+contato1.insertBefore(lista, titulo1); // insere a lista antes do titulo
+contato1.removeChild(titulo1); // remove titulo de contato 
+contato1.replaceChild(lista, titulo1); // substitui titulo por lista 
+
+/* Novos Elementos 
+Podemos criar novos elementos com o método creaeElement() */ 
+
+const animais = document.querySelector(".animais"); 
+
+const novoH1 = document.createElement('h1'); 
+novoH1.innerText = 'Novo Título'; 
+novoH1.classList.add('titulo'); 
+
+animais.appendChild(novoH1); 
+
+/* Clonar Elementos 
+Todo elemento selecionado é único. 
+Para criarmos um novo elemento baseado no anterior, 
+é necessário utilizar o método cloneNode() */ 
+
+const titulo3 = document.querySelector('h1');
+const titulo4 = document.querySelector('h1');
+const novoTitulo = titulo; 
+// titulo3, titulo4 e novoTitulo são iguais
+
+const cloneTitulo = titulo.cloneNode(true); 
+contato.appendChild(cloneTitulo); 
+
+// true sinaliza para incluir os filhos 
+
+// Exercício 
+
+// Dupliqye o menu e adicine ele em copy 
+
+const menuExercicio = document.querySelector('.menu'); 
+const copy = document.querySelector('.copy'); 
+
+const cloneMenu = menuExercicio.cloneNode(true); 
+copy.appendChild(cloneMenu);
+
+// Selecione o primeiro DT da dl de Faq 
+
+const faq = document.querySelector('.faq'); 
+const primeiroDt = faq.querySelector('dt'); 
+
+// Selecione o DD referente ao primeiro DT 
+
+const proximoDD = primeiroDt.nextElementSibling;
+
+// Substitua o conteúdo html de .faq pelo de .animais 
+
+const animaisExercicio = document.querySelector('.animais'); 
+
+faq.innerHTML = animaisExercicio.innerHTML; 
