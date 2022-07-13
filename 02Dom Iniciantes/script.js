@@ -647,3 +647,69 @@ function handleKeyboard(event) {
 };
 
 window.addEventListener('keydown', callback);
+
+
+// Exercício 
+
+// Quando o usuário clicar nos links internos do site, 
+// adicione a classe ativo ao item clicando e remova dos 
+// demais itens caso eles possuam a mesma. 
+// Previna o comportamento padrão desses links. 
+
+const linksInternos = document.querySelector('a[href^="#"]');
+
+function handleLink(event) {
+  event.preventDefault();
+  linksInternos.forEach((link) => {
+    link.classList.remove('ativo');
+  });
+  this.classList.add('ativo'); // event.currentaTarget.classlist.add('ativo'); 
+}; 
+
+linksInternos.forEach((link) => {
+  link.addEventListener('click', handleLink);
+});
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados.
+
+const todosElementos = document.querySelectorAll('body *'); // CSS body + espaço 
+
+// function handleElemento(event) {
+//   console.log(event.currentTarget); 
+// };
+
+// todosElementos.forEach((elemento) => {
+//  elemento.addEventListener('click', handleElemento)
+// });
+
+// Utilizando o código anterior, ao invés de mostrar no console, 
+// remova o elemento que está sendo clicado. *método remove()* 
+
+ function handleElemento(event) {
+   event.currentTarget.remove();
+  };
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function handleClickT(event) {
+  if(event.key === 't') { 
+    document.documentElement.classList.toggle('textomaior') // add 
+  };
+};
+
+window.addEventListener('keydown', handleClickT);
+
+/* outerHTML, innerHTML e innerText 
+Propriedades que retornam uma string contendo o html ou texto. 
+É possível atribuir um novo calor para as mesmas 
+element.innerText = 'Novo Texto'. */ 
+
+const menu1 = document.querySelector('.menu'); 
+
+menu.outerHTML; // todo htmldo elemento
+menu.innerHTML; // html interno 
+menu.innerText; // texto, sem tags 
+
+menu.innerText = '<p>Texto</p>'; // a tag vai como texto 
+menu.innerHTML = '<p>Texto</p>'; // a tag é renderizada 
