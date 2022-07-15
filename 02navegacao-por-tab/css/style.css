@@ -234,3 +234,16 @@ background: #FB5;
     transform: translate3d(0, 0, 0);
   }
 }
+
+.js-accordion dd {
+  display: none;
+}
+
+.js-accordion dt::after {
+  content: '⬎';
+  margin-left: 10px;
+}
+
+.js-accordion dt.ativo::after {
+  content: '⬏';
+}
