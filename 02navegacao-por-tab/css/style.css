@@ -263,3 +263,11 @@ background: #FB5;
     max-height: 200px;
   }
 }
+
+.js .js-scroll {
+  opacity: 0;
+}
+
+.js .js-scroll {
+  opacity: 1;
+}
