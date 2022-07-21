@@ -90,3 +90,21 @@ function Carro3(marca, precoInicial) {
 const audi = new Carro3('Audi', 5000); //5000 * 1.2 = 6000
 
 // Variáveis dentro do Constructor estão "protegidas".
+
+/* Exemplo Real 
+Quando mudamos a propriedade seletor, o objeto Dom irá 
+passar a selecionar o novo seletor em seus métodos. */ 
+
+const Dom = {
+  seletor: 'li',
+  element() {
+    return document.querySelector(this.selector); 
+  },
+  ativo() {
+    this.element().classList.add('ativo');
+  },
+};
+
+Dom.ativo(); // adiciona ativo ao li
+Dom.seletor = 'ul'; 
+Dom.ativo(); // aiciona ativo ao ul
