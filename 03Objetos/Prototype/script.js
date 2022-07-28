@@ -111,3 +111,26 @@ Object.getOwnPropertyNames(Array.prototype);
 [1,2,3].slice(); // existe 
 [1,2,3].from(); // não existe 
 
+/* Entenda o Que está Sendo Retornado 
+Os métodos e propriedades acessando com o . são referentes ao
+tipo de dados que retornado antes desse . */ 
+
+const Carro = { 
+  marca: 'Ford',
+  preco: 2000,
+  acelerar() {
+    return true;
+  }
+};
+
+Carro // Object 
+Carro.marca // String 
+Carro.preco // Number 
+Carro.acelerar // Function 
+Carro.acelerar() // Boolean - true, false
+Carro.marca.charAt // Function
+Carro.marca.charAt(0) // String
+
+// Verifique o nome do construtor com o .constructor.name
+
+
