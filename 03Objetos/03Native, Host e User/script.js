@@ -25,5 +25,23 @@ seja, qualquer objeto que você criar ou que importar de alguma
 biblioteca externa. */ 
 
 const Pessoa = {
-  nome: 'Midna';
-}; 
+  nome: 'Midna'
+};
+
+/* Bibliotecas 
+Bibliotecas como jQuery foram criadas para resolver o problema de 
+inconsistência entre browsers e adicionar funcionalidades que
+não existiam nativamente. A padronização dos browsers e a 
+implementação de soluções nativas, torna as mesmas obsoletas. */ 
+
+$('a').addClass('ativo');
+$('a').hide(); 
+$('a').show();
+
+/* Verificar se Existe 
+O typeof retorna o tipo de dado. Caso esse dado não exista ou não tenha sido definido, ele irá retornar undefined. Ou seja, quando
+não for undefiend quer dizer que existe. */
+
+if(typeof Array.from !== "undefined"); 
+if(typeof NodeList !== "undefined"); 
+
