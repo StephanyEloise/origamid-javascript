@@ -133,4 +133,44 @@ Carro.marca.charAt(0) // String
 
 // Verifique o nome do construtor com o .constructor.name
 
+// Exercícios 
 
+// Crie uma função construtora de Pessoas 
+// Deve conter nome, sobrenome e idade 
+// Crie um método no protótipo que retorne 
+// o nome completo da pessoa 
+
+function Pessoas(nome, sobrenome, idade) {
+  this.nome = nome; 
+  this.sobrenome = sobrenome; 
+  this.idade = idade;
+};
+
+Pessoas.prototype.nomeCompleto = function() {
+  return `${this.nome} ${this.sobrenome}`
+};
+
+const stephanyEloise = new Pessoas('Stephany', 'Eloise', 27); 
+
+// Liste os métodos acessados por 
+// dados criados com Nodelist 
+// HTMLCollection, Document
+
+Object.getOwnPropertyNames(NodeList.prototype);
+Object.getOwnPropertyNames(HTMLAllCollection.prototype);
+Object.getOwnPropertyNames(Document.prototype);
+
+// Liste os construtores dos dados abaixo 
+
+const li = document.querySelectorAll('li');
+
+li; // HTMLLIElement
+li.click; // Function
+li.innerText; // String 
+li.values; // Number 
+li.hidden; // Boolean 
+li.offsetLeft; // Number 
+li.click(); // undefined 
+
+// Qual o construtor do dado abaixo: 
+li.hidden.constructor.name;  // String 
