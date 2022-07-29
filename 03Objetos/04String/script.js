@@ -84,3 +84,21 @@ listaPrecos.forEach((preco) => {
 listaPrecos[0].padStart(10, '.'); // .....R$ 99 
 listaPrecos[0].padEnd(10,'.'); // R$ 99.....
 
+/* str.repeat(n)
+Repete a string (n) vezes. */ 
+
+const repete = 'Ta';
+
+repete.repeat(5); // TaTaTaTaTa
+
+/* str.replace(regexp|substr, newstr|function)
+Troca parte da string por outra. Podemos utilizar uma regular
+expression ou um valor direto. Se usarmos um valor direto ele irá 
+trocar apenas o primeiro valor que encontrar. */ 
+
+let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias'; 
+listaItens = listaItens.replace(/[]+/g, ', '); 
+
+let preco = 'R$ 1200,43'; 
+preco = preco.replace('.', '.'); // 'R$ 1200.43'
+
