@@ -45,3 +45,30 @@ não for undefiend quer dizer que existe. */
 if(typeof Array.from !== "undefined"); 
 if(typeof NodeList !== "undefined"); 
 
+// Exercócios 
+
+// Liste 5 objetos nativos 
+
+String 
+Number 
+Object 
+Array
+Function
+
+// Liste 5 objetos do browser 
+
+HTMLCollection
+NodeList
+Window
+History 
+Document
+
+// Liste 2 Métodos, Propriedades ou Objetos 
+// presentes no Chrome que não existem no Firefox 
+
+if(typeof document.webitVisibilityState !== "undefined") {
+  console.log('Existe');
+} else {
+  console.log('Não existe');
+};
+
