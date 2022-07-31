@@ -97,8 +97,21 @@ expression ou um valor direto. Se usarmos um valor direto ele irá
 trocar apenas o primeiro valor que encontrar. */ 
 
 let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias'; 
-listaItens = listaItens.replace(/[]+/g, ', '); 
+listaItens = listaItens.replace(/[ ]+/g, ', '); 
+// /[ ]+/g pegar todos os espaços 
 
 let preco = 'R$ 1200,43'; 
-preco = preco.replace('.', '.'); // 'R$ 1200.43'
+preco = preco.replace(',', '.'); // 'R$ 1200.43'
 
+/* str.split(padrao)
+Divide a string de acordo com o padrão passado
+e retorna uma array. */ 
+
+const itensLista = 'Ursos Coelhos Cachorros Gatos Vacas Esquilos';
+const arrayItens = itensLista.split(' '); 
+
+const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+const htmlArray = htmlText.split('div');
+const htmlNovo = htmlArray.join('section'); 
+
+//join é um método de Array
