@@ -115,3 +115,15 @@ const htmlArray = htmlText.split('div');
 const htmlNovo = htmlArray.join('section'); 
 
 //join é um método de Array
+
+/* str.toLowerCase() e str.toUpperCase()
+Retorna a string em letras maiúsculasou min;usculas. 
+Bom para verificarmos input de usuários. */ 
+
+const sexo1 = 'Feminino';
+const sexo2 = 'feminino';
+const sexo3 = 'FEMININO';
+
+(sexo1.toLocaleLowerCase() === 'feminino'); // true 
+(sexo2.toLocaleLowerCase() === 'feminino'); // true 
+(sexo3.toLocaleLowerCase() === 'feminino'); // true 
