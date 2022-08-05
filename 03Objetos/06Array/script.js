@@ -94,3 +94,37 @@ Inverte os itens da array e retorna a nova array. */
 
 const carrosInverte = carros3.reverse(); 
 carros3; // ['Honda', 'VW', 'Fiat', 'Ford'];
+
+/* [].splice()
+[].splice(index, remover, item1, item2, ...)
+adiciona valores na array a partir do index. 
+Remove a quantidade de itens que for passada 
+no segundo parâmetro (retorna esses itens). */
+
+carros3.splice(1, 0, 'Kia', 'Mustang'); // []
+carros3; // ['Ford', 'Kia', 'Mustang', 'Fiat', 'VW', 'Honda']; 
+
+carros3.splice(3, 2, 'Ferrari'); // ['Fiat', 'VW']
+carros3; // ['Ford', 'Kia', 'Mustang', 'Ferrari', 'Honda']; 
+
+/* [].copyWithin()
+[].copyWithin(alvo, inicio, final) a partir do alvo, 
+ele irá copiar a array começamdp do início até o final
+e vai preencher a mesma com essa cópia. Caso omita os valores de início e final, ele irá utilizar como 
+inicio o 0 e final o valor total da array. */ 
+
+['Item1', 'Item2', 'Item3', 'Item4'].copyWithin(2, 0, 3);
+// ['Item1', 'Item2', 'Item1', 'Item2'];
+
+['Item1', 'Item2', 'Item3', 'Item4'].copyWithin(-1); // ['Item1', 'Item2', 'Item3', 'Item1']; 
+
+/* Métodos de Acesso [].concat()
+Os métodos abaixo não modificam a array original, 
+apenas retornam uma array modificada. [].concat()
+irá concatenar a array com o valor passado. */ 
+
+const transporte1 = ['Barco', 'Aviao'];
+const transporte2 = ['Carro', 'Moto'];
+const transporte3 = transporte1.concat(transporte2); // ['Barco', 'Aviao', 'Carro', 'Moto'];
+
+const maisTransportes = [].concat(transporte1, transporte2, 'Van'); // ['Barco', 'Aviao', 'Carro', 'Moto', 'Van'];
