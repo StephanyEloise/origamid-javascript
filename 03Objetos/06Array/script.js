@@ -1,133 +1,71 @@
-/* Number 
-É a construtora e números, todo número possui as propriedades 
-e métodos de um prototype de Number. Number também possui 
-alguns métodos. */ 
+/* Arrays 
+Armazenam uma coleção de elmentos. Estes podem ser 
+strings, arrays, boolean, number, function, objects
+e mais. */ 
 
-const ano = 2022; 
-const preco1 = new Number(99); 
+const instrumentos = ['Violino', 'Bateria', 'Piano']; 
+const precos = [49, 99, 69, 89]; 
 
-/* Number.isNaN() e Number.isInteger(); 
-isNaN() é um método de Number, ou seja, não faz parte 
-do protótipo. isInteger() verifica se é uma integral. */ 
+const dados = [new String('Tipo 1'), ['Carro', 'Portas', {cor: 'Azul', preco: 2000}], function andar(nome) { console.log(nome) }]; 
 
-Number.isNaN(NaN); // true 
-Number.isNaN(4 + 5); // false 
+dados[2]('Ford');
+dados[1][2].cor; // azul 
 
-Number.isInteger(20); // true 
-Number.isInteger(23.6); // false 
+/* Construção de Arrays 
+Toda array herda os méodos e propriedades do protótipo 
+do construtor Array. */ 
 
-/* Number.parseFloat() e Number.parselnt()
-parseFloat() serve para retornarmos um número a partir de uma
-string. A string deve começar com um número. parselnt() recebe
-também um segundo parâmetro que é o Radix, 10 é para decimal. */ 
+const carros = new Array('Corola', 'Mustang', 'Honda'); 
 
-parseFloat('99.50'); // Mesma função sem o Number 
-Number.parseFloat('99.50'); // 99.5
-Number.parseFloat('100 Reais'); // 100
-Number.parseFloat('R$ 100'); // NaN
+carros[1] // Mustang 
+carros[2] = 'Ferrari';
+carros[10] = 'Parati'; 
+carros.length; // 11 
 
-parseInt('99.50', 10); // 99 
-parseInt(5.43434355555, 10); // 5 
-Number.parseInt('100 Reais', 10); // 100 
+// Os valores das array's não são estáticos 
 
-// Float possui decimal, Integer não 
+/* Array.from()
+É um método utilizado para transformar array-like
+objects, em uma array. */ 
 
-/* n.toFixes(decimais)
-Arredonda o número com base no total de casas decimais do 
-argumento. */ 
+let li = document.querySelectorAll('li'); // Nodelist 
+li = array.from(li); // Array 
 
-const preco2 = 2.99; 
-preco2.toFixed(); // 3 
+const carros = {
+  0: 'Fiat',
+  1: 'Honda',
+  2: 'Ford',
+  length: 4, 
+}
 
-const carro = 1000.455; 
-carro.toFixed(2) // 1000.46 
+const carrosArray = Array.from(carros); 
 
-const preco3 = 1499.49; 
-preco3.toFixed() // 1499 
+/* Array.of(), Array() e new Array()
+Verifica se o valor passado é uma array e retorna um 
+valor booleano. A palavra chave new não é necessária 
+para utilizar o construtor Array. */ 
 
-/* n.toString(radix) 
-Transforma o número em uma string com base no Radix.
-Use o 10 para o sistema decimal. */ 
+Array.of(10); // [10]
+Array.of(1, 2, 3, 4); // [1, 2, 3, 4]
+new Array(5); // [,,,,]
+Array(5); // [,,,,]
+Array(1, 2, 3, 4); // [1, 2, 3, 4]
 
-preco2.toString(10); // '2.99'
+/* Métodos Modificadores [].sort()
+Os próximos métodos que vemos falar sobre, são os 
+métodos modificadores (mutator methods). Além de 
+retornarem um valor, eles modificam a array original.
+[ ].sort( ) organiza a pelo unicode. */ 
 
-/* n.toLocaleString(lang, options); 
-Formata o número de acordo com a língua e as opções passadas. */ 
+instrumentos.sort();
+instrumentos; // ['Bateria', 'Piano', 'Violino'];
 
-const preco4 = 59.49; 
-preco4.toLocaleString('en-US', {style: 'currency', currency: 'USD'}); // $59.49 
-preco4.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}); // R$ 59,49 
+const idades = [32,21,33,43,1,12,8];
+idades.sort();
+idades; // [1, 12, 21, 32, 33, 43, 8];
 
-/* Math 
-É um Objeto nativo que possui propriedades e métodos de 
-expressões matemáticas comuns. */ 
+/* [].unshift e []push()
+[].unshift adiciona elementos ao início da array e
+retorna o length da mesma. []push() adiciona elementos
+ao final da array e retorna o length da mesma. */ 
 
-Math.PI // 3.14159
-Math.E // 2.718
-Math.LN10 // 2.303
-
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math
-
-/* Math.abs(), Math.ceil(), Math.floor() e Math.round()
-abs() retorna o valor absoluto, ou seja, 
-transforma negativo em positivo. 
-ceil() arredonda para cima, retornando sempre
-uma integral, e floor() para baixo. 
-round() arrendoda para o número integral mais próximo. */ 
-
-Math.abs(-5.5); // 5.5 
-Math.ceil(4.8334); // 5 
-Math.ceil(4.3); // 5 
-Math.floor(4.8334); // 4
-Math.floor(4.3); // 4 
-Math.round(4.8334); // 5 
-Math.round(4.3); //4
-
-/* Math.max(). Math.min() e Math.random()
-max() retorna o maior número de uma lista de argumentos
-min() retorna o menor número 
-random() um número aleatório entre 0 e 1. */ 
-
-Math.max(5, 3, 10, 42, 2); // 42 
-Math.min(5, 3, 10, 42, 2); // 2 
-
-Math.random(); // 0.XXX
-Math.floor(Math.random() * 100); // entre 0 e 100 
-Math.floor(Math.random() * 500); // entre 0 e 500 
-
-// Número random entre 72 e 32 
-Math.floor(Math.random() * (72 - 32 + 1)) + 32; 
-Math.floor(Math.random() * (max - min +1)) + min; 
-
-// Exercícios 
-
-// Retorne um número aleatório entre 1050 e 2000 
-
-const aleatorio = Math.floor(Math.random() * (2000 - 1050 + 1)) + 1050; 
-
-// Retorne o maior número da lista abaixo 
-
-const numeros = '4, 5, 20, 8, 9'; 
-const arrayNumeros = numeros.split(', '); 
-const numeroMaximo = Math.max(arrayNumeros); 
-
-// Crie uma função para limpar os preços 
-// e retornar os números com centavos arredondados 
-// depois retorna a soma total 
-
-const listaPrecos = [ 'R$ 59,99', ' R$ 100,222', 'R$ 230 ', 'r$  200']; 
-
-function limparPreco(preco) {
-  preco = +preco.toUpperCase().replace('R$', '').trim().replace(',', '.');
-  preco = +preco.toFixed(2);
-  return preco;
-}; 
-
-let soma = 0; 
-listaPrecos.forEach((preco) => {
-  soma += limparPreco(preco);
-});
-
-soma.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
-
-limparPreco(listaPrecos[1]); 
