@@ -69,3 +69,28 @@ idades; // [1, 12, 21, 32, 33, 43, 8];
 retorna o length da mesma. []push() adiciona elementos
 ao final da array e retorna o length da mesma. */ 
 
+const carros2 = ['Ford', 'Fiat', 'VW']; 
+
+carros2.unshift('Honda', 'Kia'); // 5
+carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW']; 
+
+carros2.push('Ferrari'); // 6
+carros2; // ['Honda', 'Kia', 'Ford', 'Fiat', 'VW', 'Ferrari']; 
+
+/* [].shift() e []pop()
+[].shift() remove o primeiro elemento da array e 
+retorna o mesmo. [].pop() remove o último elemento da
+array e retorna o mesmo. */ 
+
+const carros3 = ['Ford', 'Fiat', 'VW', 'Honda']; 
+const primeiroCarro = carros3.shift(); // 'Ford'
+carros3; // ['Fiat', 'VW', 'Honda'];
+
+const ultimoCarro = carros3.pop(); // 'Honda'
+carros3; // ['Fiat', 'VW'];
+
+/* [].reverse()
+Inverte os itens da array e retorna a nova array. */
+
+const carrosInverte = carros3.reverse(); 
+carros3; // ['Honda', 'VW', 'Fiat', 'Ford'];
