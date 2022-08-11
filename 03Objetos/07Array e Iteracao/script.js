@@ -32,3 +32,17 @@ li.forEach(function(item) {
   item.classList.add('ativa');
 }); 
 
+li.forEach((item, index) => {item.classList.add('ativa' + index)}); 
+
+/* Modificar a Array Orginal 
+O terceiro argumento do callback é uma referência direta
+e se modificado á também modificar a array original. */ 
+
+carros.forEach((item, index, array) => {
+  array[index] = 'Carro ' + item; 
+}); 
+
+carros; // ['Carro Ford', 'Carro Fiat', 'Carro Honda']
+
+// É melhor utukizarmos o map para isso
+
