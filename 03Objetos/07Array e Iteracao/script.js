@@ -171,7 +171,7 @@ linguagens.slice(); // Retorna toda a array
 
 const cloneLinguagens = linguagens.slice(); 
 
-linguagens.pop();
+linguagens.pop()
 
 linguagens; // ['html', 'css', 'js', 'php', ' python']; 
 cloneLinguagens; // ['html', 'css', 'js', 'php', ' python', 'js']; 
@@ -212,7 +212,6 @@ let html = `<section>
 // Substitua section por ul e div com li, 
 // utilizando split e join 
 
-html = html.split('section').join('ul').split('div').join('li'); 
 
 const carros = [ 'Ford', 'Fiat', 'VW', 'Honda']; 
 // Remova o último carro, mas antes de remover 
@@ -220,4 +219,4 @@ const carros = [ 'Ford', 'Fiat', 'VW', 'Honda'];
 
 const cloneCarros = carros.slice(); 
 
-carros.pop();
+carros.pop()
