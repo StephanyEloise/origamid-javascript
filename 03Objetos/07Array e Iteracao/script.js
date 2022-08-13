@@ -142,12 +142,164 @@ o retornado pela anterior. */
 const aulas3 = [10, 25, 30]; 
 
 // 1 
-aulas3.reduce((0, 10) => {
-  return 0 + 10;
-}, 0); 
+//aulas3.reduce((0, 10) => {
+//  return 0 + 10;
+//}, 0); // retorna 10 
 
 // 2 
-aulas3.reduce((10, 25) => {
-  return 10 + 25; 
-}, 0); 
+//aulas3.reduce((10, 25) => {
+//  return 10 + 25; 
+//}, 0); // retorna 35 
 
+// 3 
+//aulas3.reduce((35, 30) => {
+//  return 35+ 30; 
+//}, 0); // retorna 65 
+
+/*Reduce Passo a Passo 2
+Se não definirmos o valor inicial do acumulador, ele irá 
+pular a primeira iteração e começar a partir da segunda. 
+Neste caso o valor do acumulador será o valor do item da 
+primeira iteração. */ 
+
+// 1 
+// aulas.reduce((10, 25) => {
+//   return 10 + 25; 
+// }); // retorna 35
+
+// 2 
+// aulas.reduce((35, 30) => {
+//   return 35 + 30; 
+// }); // retorna 65 
+
+/* Maior valor com [].reduce() */ 
+
+const numeros3 = [10, 25, 60, 5, 35, 10]; 
+
+const maiorvALOR= numeros3.reduce((anterior, atual) => {
+  return anterior < atual ? atual : anterior;
+}); 
+
+maiorvALOR; // 60 
+
+/* Podemos retornar outros valores */ 
+
+const aulas4 = [
+  {
+    nome: 'HTML 1',
+    min: 15
+  }, 
+  {
+    nome: 'HTML 2',
+    min: 10
+  }, 
+  {
+    nome: 'CSS 1',
+    min: 20
+  }, 
+  {
+    nome: 'JS 1',
+    min: 25
+  }, 
+]; 
+
+// var acumulador = {}
+// acumulador[0] = 'Qualquer Nome'; // acumulador.aula
+const listaAulas = aulas.reduce((acumulador, aula, index) => {
+  acumulador[index] = aula.nome; 
+  return acumulador;
+}, {}); 
+
+/* [].reduceRight()
+A diferença é que este começa a iterar da direita para a 
+esquerda, enquanto o reduce itera da esquerda para a 
+direita. */ 
+
+const frutas = ['Banana', 'Pêra', 'Uva']; 
+
+const frutasRight = frutas.reduceRight((acc, fruta) => acc + ' ' + fruta); 
+const frutasLeft = frutas.reduce((acc, fruta) => acc + ' ' + fruta); 
+
+frutasRight; // Uva Pêra Banana 
+frutasLeft; // Banana Pêra Uva 
+
+/* [].some()
+Se pelo menos um return da iteração for truthy, 
+ele retorna true. */ 
+
+const temUva = frutas.some((fruta) => {
+  return fruta === 'Uva';
+}); // true 
+
+function maiorQue100(numero) {
+  return numero > 100; 
+}; 
+
+const numeros4 = [0, 43, 22, 88, 101, 2]; 
+const temMaior = numeros.some(maiorQue100); // true 
+
+/* []. every(), se todos os returnsdas iteraçoes forem 
+truthy, o método irá retornar true. Se pelo menos um for 
+falsy, ele irá retornar false. */ 
+
+const frutas2 = ['Banana', 'Pêra', 'Uva', '']; 
+// False pois pelo menos uma fruta 
+// está vazia '', o que é um valor falsy
+const arraysCheias = frutas2.every((fruta) => {
+  return fruta; // false
+}); 
+
+const numeros5 = [6, 43, 22, 88, 101, 29]; 
+const maiorQue3 = numeros5.every(x => x > 3); // true 
+
+/* [].find() e [].findIndex()
+[].find(), retorna o valor atual da primeira iteração
+que retornar um valor truthy. Já o [].findIndex(), ao
+invés de retornar o valor, retorna o index deste 
+valor na array. */ 
+
+const frutas3 = ['Banana', 'Pêra', 'Uva', 'Maçã']; 
+const buscaUva = frutas.findIndex((fruta) => {
+  return fruta === 'Uva';
+}); // 2 
+
+const numeros6 = [6, 43, 22, 88, 101, 29]; 
+const buscaMaior45 = numeros5.find(x => x > 45); // 88
+
+/* [].filter()
+Retorna uma array com a lista de valores que 
+durante a sua iteração retornaram um valor truthy. */
+
+const frutas4 = ['Banana', undefined, null, '', 'Uva', 0, 'Maçã']; 
+const arrayLimpa = frutas.filter((fruta) => {
+  return fruta;
+}); // ['Banana', 'Uva', 'Maçã']; 
+
+const numeros7 = [6, 43, 22, 88, 101, 29]; 
+const filterMaior45 = numeros5.filter(x => x > 45); // [88, 101]; 
+
+// Filter em Objetos
+
+const aulas5 = [
+  {
+    nome: 'HTML 1',
+    min: 15
+  }, 
+  {
+    nome: 'HTML 2',
+    min: 10
+  }, 
+  {
+    nome: 'CSS 1',
+    min: 20
+  }, 
+  {
+    nome: 'JS 1',
+    min: 25
+  }, 
+]; 
+
+const aulasMaiores = aulas5.filter((aula) => {
+  return aula.min > 15; 
+}); // CSS 1, JS 1 
+// >= 15;  HTML 1, CSS 1, JS 1
