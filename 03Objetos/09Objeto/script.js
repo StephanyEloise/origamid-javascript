@@ -260,4 +260,5 @@ Object.freeze(configuracao);
 // as propriedades do
 // protótipo de String e Array
 
-console.log()
+console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(getOwnPropertyNames(Array.prototype)); 

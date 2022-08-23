@@ -6,7 +6,7 @@ function areaQuadrado(lado) {
   return lado * lado;
 }
 
-const perimetroQuadrado = new Function('lado', 'return lado * 4');
+const perimetroQuadrado = new Function('lado', 'return lado * 4'); 
 
 /* PROPRIEDADES
 Function.length retorna o total de argumentos da função. 

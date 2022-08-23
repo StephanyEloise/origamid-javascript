@@ -43,7 +43,7 @@ function initAccordion() {
 initAccordion();
 
 function initScrollSuave() { 
-  const linksInternos = document.querySelectorAll('.js-menu a[herf^="#"]');
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
   function scrollToSection(event) {
     event.preventDefault(); 
@@ -61,22 +61,32 @@ function initScrollSuave() {
     //  behavior: 'smooth',
     // });
     
-
   linksInternos.forEach((link) => {
     link.addEventListener('click', scrollToSection);
   });
 }; 
 initScrollSuave();
 
-const section = document.querySelectorAll('.js-scroll'); 
+function initAnimacaoScroll() {
+  const section = document.querySelectorAll('.js-scroll'); 
 
-function animaisScroll() {
-  section.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if(sectionTop <0) {
-      section.classList.add('ativo');
+  if(section.length) {
+    const windowMetade = window.innerHeight * 0.6; 
+
+    function animaScroll() {
+      section.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = (sectionTop - windowMetade) < 0 ; 
+        if(isSectionVisible) 
+          section.classList.add('ativo');
+        else 
+          section.classList.remove('ativo');
+      });
     };
-  });
-};
 
-window.addEventListener('scroll', animaisScroll);
+    animaScroll(); 
+
+    window.addEventListener('scroll', animaScroll);
+  };
+};
+initAnimacaoScroll(); 
