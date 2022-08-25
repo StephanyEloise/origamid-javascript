@@ -19,3 +19,74 @@ div.dataset.cor; // 'azul'
 div.dataset.width; // '500'
 div.dataset.tempo = 1000;
 // DOMStringMap {cor: "azul", width: "500", tempo: "1000"}
+
+/* DATA ATRIBUTES
+Os atributos e valores que começarem com data- poderão ser utilizados como forma de configuração de plugins e interações DOM / JS.*/
+
+const divs = document.querySelectorAll('[data-anima]');
+divs.forEach((div) => {
+  div.classList.add(div.dataset.anima);
+});
+
+// adiciona em cada div
+// uma classe com o mesmo nome
+// que o valor de data
+
+/* DATA VS CLASS
+A vantagem de se utilizar data atributes é que torna mais fácil evitarmos conflitos com estilos do CSS. Além de deixar a estrutura da tag mais organizada.*/
+
+// <div data-anima="left" data-tempo="1000">Div 1</div>
+// <div class="anima-left tempo-1000">Div 2</div>
+
+/* NOMENCLATURA
+Por padrão o JavaScript não aceita - (traço) como caracter válido para nomear propriedades. Então qualquer traço será removido e a letra seguinte transformada em maiúscula. */ 
+
+// <div data-anima-scroll="left">Div 1</div>
+
+const div = document.querySelector('[data-anima-scroll]');
+div.dataset;
+// {animaScroll: 'left'}
+div.dataset.animaScroll; // left
+div.dataset.tempoTotal = 1000;
+// Na div vira data-tempo-total="1000"
+
+delete div.dataset.animaScroll; // remove o atributo
+
+// EXERCÍCIOS
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
+
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+// Substitua todas as classes js- por data atributes.
+
+function initTabNav() {
+  const tabMenu = document.querySelectorAll('.js-tabmenu li'); 
+  const tabContent = document.querySelectorAll('.js-tabcontent section');
+
+  if(tabMenu.length && tabContent.length) {
+    tabContent[0].classList.add('ativo'); 
+
+    function activeTab(index) {
+      tabContent.forEach((section) => {
+        section.classList.remove('ativo'); 
+      });
+      tabContent[index].classList.add('ativo');
+    }
+    
+    tabMenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener('click', () => {
+        activeTab(index);
+      });
+    });
+  }
+}
+
+initTabNav();
