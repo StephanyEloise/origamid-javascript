@@ -1,12 +1,15 @@
-/*HTMLELEMENT
+/* HTMLElement
 Todo elemento HTML do DOM herda propriedades e métodos do construtor HTMLElement.*/
 
 const h1 = document.querySelector('h1');
 Object.prototype.toString.call(h1); // [object HTMLHeadingElement]
 // HTMLHeadingElement > HTMLElement > Element > Node > EventTarget > Object
 
-/*DATASET
+/* Dataset
 dataset é uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap. Dentro desse objeto existe uma coleção de chave / valor, com todos os atributos do elemento html que começarem com data-.*/
+
+/* <div data-cor="azul" data-width="500">Uma Div</div>
+<span data-anime="left" data-tempo="2000">Um Span</span> */
 
 // Ambos os valores selecionam a mesma div acima.
 let div = document.querySelector('div');
@@ -39,7 +42,7 @@ A vantagem de se utilizar data atributes é que torna mais fácil evitarmos conf
 // <div class="anima-left tempo-1000">Div 2</div>
 
 /* NOMENCLATURA
-Por padrão o JavaScript não aceita - (traço) como caracter válido para nomear propriedades. Então qualquer traço será removido e a letra seguinte transformada em maiúscula. */ 
+Por padrão o JavaScript não aceita - (traço) como caracter válido para nomear propriedades. Então qualquer traço será removido e a letra seguinte transformada em maiúscula. */
 
 // <div data-anima-scroll="left">Div 1</div>
 
@@ -68,19 +71,19 @@ delete div.dataset.animaScroll; // remove o atributo
 // Substitua todas as classes js- por data atributes.
 
 function initTabNav() {
-  const tabMenu = document.querySelectorAll('.js-tabmenu li'); 
+  const tabMenu = document.querySelectorAll('.js-tabmenu li');
   const tabContent = document.querySelectorAll('.js-tabcontent section');
 
-  if(tabMenu.length && tabContent.length) {
-    tabContent[0].classList.add('ativo'); 
+  if (tabMenu.length && tabContent.length) {
+    tabContent[0].classList.add('ativo');
 
     function activeTab(index) {
       tabContent.forEach((section) => {
-        section.classList.remove('ativo'); 
+        section.classList.remove('ativo');
       });
       tabContent[index].classList.add('ativo');
     }
-    
+
     tabMenu.forEach((itemMenu, index) => {
       itemMenu.addEventListener('click', () => {
         activeTab(index);
